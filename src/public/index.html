@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div id="app">
+
+    <div class="top">
+
+        <header-section ref="header" :is-featured="isFeatured"></header-section>
+
+        <promo-section v-if="showPromo"></promo-section>
+
+    </div>
+
+
+
+    <sale-section v-if="showPromo"></sale-section>
+
+
+<section class="items">
+    <products ref="products" :is-featured="isFeatured"></products>
+
+
+    <div class="items_bottom">
+        <a href="#" class="button_bottom" @click="switchPromo">{{ showPromo ? "Browse All Product" : "Main page" }}</a>
+    </div>
+</section>
+
+    <quality-section v-if="showPromo"></quality-section>
+
+    <sub-section v-if="showPromo"></sub-section>
+
+    <footer-section></footer-section>
+</div>
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+        integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</body>
+
+
+</html>
